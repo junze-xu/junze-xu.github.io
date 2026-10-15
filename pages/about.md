@@ -31,7 +31,7 @@ permalink: /about/
       <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.6rem;">欢迎与我交流</p>
     </div>
     <div style="margin-top: 2.5rem; text-align: center;">
-      <img src="{{ '/images/qrcode-official-account.jpg' | relative_url }}" alt="公众号 JunzeXuInfra" style="width: 160px; height: auto; border-radius: 12px; border: 1px solid var(--border); display: block; margin: 0 auto;">
+      <img src="{{ '/images/qrcode-official-account.jpg' | relative_url }}" alt="公众号 JunzeXuInfra" style="width: 200px; height: auto; border-radius: 12px; border: 1px solid var(--border); display: block; margin: 0 auto;">
       <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.6rem;">关注公众号 <strong style="color: var(--accent);">JunzeXuInfra</strong></p>
       <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0.3rem;">技术干货 · 知识圈 · infra 品牌主阵地</p>
     </div>
