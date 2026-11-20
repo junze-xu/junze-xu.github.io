@@ -8,24 +8,39 @@ menu: 关于
 permalink: /about/
 ---
 
+<div class="about-page">
+
 <!-- Hero -->
-<section class="hero" style="min-height: auto; padding: 5rem 2rem 3.5rem;">
-  <span class="hero-tag">PORTFOLIO / 2026</span>
+<section class="about-hero">
   <h1>你好，我是 <span class="gradient-text">Junze Xu</span></h1>
   <p>系统程序员 · Linux / C/C++ / OpenSSL<br>记录技术思考与开发实践</p>
 </section>
 
-<!-- Bio -->
-<section class="section" style="padding-top: 1.5rem;">
-  <div class="container" style="max-width: 620px;">
-    <p style="color: var(--text-secondary); line-height: 1.9; margin-bottom: 1.5rem;">
-      我是 <strong style="color: var(--text);">Junze Xu</strong>，一名系统程序员，常驻深圳。
-      专注于 Linux 系统编程、C/C++ 开发、OpenSSL 工具链与 Makefile 构建体系。
-    </p>
-    <p style="color: var(--text-secondary); line-height: 1.9;">
-      这个博客记录我在技术学习过程中的笔记、思考与实践经验。
-      所有文章与速查手册都可以在 <a href="{{ '/' | relative_url }}">首页</a> 按分类浏览。
-    </p>
+<!-- Projects -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <p>近期项目展示</p>
+    </div>
+    <div class="projects-grid">
+      {% for project in site.data.portfolio.projects %}
+      <div class="project-card">
+        <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
+        <div class="project-cover">
+          <span class="emoji">{{ project.emoji | default: '📁' }}</span>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">{{ project.tag }}</span>
+          <h3>{{ project.title }}</h3>
+          <p class="desc">{{ project.description }}</p>
+          {% if project.tech %}
+          <div class="project-tech">{{ project.tech }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -52,34 +67,6 @@ permalink: /about/
   </div>
 </section>
 
-<!-- Projects -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-header">
-      <h2>Projects</h2>
-      <p>近期项目展示</p>
-    </div>
-    <div class="projects-grid">
-      {% for project in site.data.portfolio.projects limit:6 %}
-      <div class="project-card">
-        <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
-        <div class="project-cover">
-          <span class="emoji">{{ project.emoji | default: '📁' }}</span>
-        </div>
-        <div class="project-info">
-          <span class="project-tag">{{ project.tag }}</span>
-          <h3>{{ project.title }}</h3>
-          <p class="desc">{{ project.description }}</p>
-          {% if project.tech %}
-          <div class="project-tech">{{ project.tech }}</div>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <!-- Contact -->
 <section class="contact" id="contact">
   <h2>让我们一起创造 ✨</h2>
@@ -91,4 +78,49 @@ permalink: /about/
     <a href="{{ social.url }}" target="_blank">{{ social.sitename }}</a>
     {% endfor %}
   </div>
-  </section>
+</section>
+
+</div>
+
+<style>
+/* ===== 关于页专属布局 ===== */
+.about-hero {
+  position: relative;
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  overflow: hidden;
+}
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -20%;
+  width: 140%;
+  height: 160%;
+  background: radial-gradient(circle at 30% 50%, rgba(244, 63, 94, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.about-hero h1 {
+  position: relative;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.about-hero p {
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+/* 模块间距收紧 */
+.about-page .section { padding: 2.5rem 0; }
+.about-page .section-header { margin-bottom: 1.75rem; }
+.about-page .contact { padding: 3rem 2rem; }
+@media (max-width: 768px) {
+  .about-hero { padding: 2.5rem 1.25rem 1.5rem; }
+  .about-page .section { padding: 2rem 0; }
+  .about-page .contact { padding: 2.5rem 1.25rem; }
+}
+</style>
