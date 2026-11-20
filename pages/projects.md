@@ -9,7 +9,7 @@ permalink: /projects/
 ---
 
 <p style="margin-top: 1rem; line-height: 1.9;">
-  这里是我在 GitHub 上维护的全部公开项目，全部托管在 GitHub Pages 上。
+  这里是我在 GitHub 上挑选的公开项目，均已部署到 GitHub Pages，后续会持续补充。
 </p>
 
 <div class="projects-hub">
