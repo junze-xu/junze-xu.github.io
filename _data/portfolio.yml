@@ -50,7 +50,7 @@ projects:
     repo: "https://github.com/junze-xu/junze-xu.github.io"
   - title: "NVIDIA AI Certification Notes"
     tag: "落地"
-    description: "NCA 四门初级 + NCP 六门中级认证逐域拆解，中文笔记 + 离线 PDF + 公开进度。"
+    description: "NCA / NCP 认证逐域拆解，中文笔记 + 离线 PDF + 公开进度。"
     tech: "Docusaurus / GitHub Pages"
     emoji: "🎓"
     link: "https://junze-xu.github.io/NVIDIA-AI-Certification-Notes/"
