@@ -10,7 +10,6 @@ permalink: /projects/
 
 <p style="margin-top: 1rem; line-height: 1.9;">
   这里是我在 GitHub 上维护的全部公开项目，全部托管在 GitHub Pages 上。
-  每个项目的页面里都留了公众号和个人微信二维码，欢迎扫码交流。
 </p>
 
 <div class="projects-hub">
