@@ -6,8 +6,8 @@ url: https://junze-xu.github.io
 date_format: "ordinal"
 title: "JunzeXu's Blog"
 subtitle: "徐钧泽"
-description: "Junze Xu 的个人博客，记录 Linux、C/C++、OpenSSL、Makefile 等技术笔记与开发心得"
-keywords: Linux, C++, OpenSSL, Makefile, 系统编程, 面试笔记, 技术博客
+description: "Junze Xu 的个人博客——深入 AI 的开发、研究与分析，聚焦 AI Infra 与 LLM 应用，沉淀可复现的技术笔记与工程实践。"
+keywords: "AI Infra, LLM, AI 应用开发, AI 研究, 大模型, AI 数据分析, 系统编程, 技术博客"
 og_image: /assets/images/og-cover.png
 timezone: Asia/Shenzhen
 encoding: "utf-8"
@@ -67,7 +67,7 @@ markdown: kramdown
 kramdown:
     input: GFM
 highlighter: rouge
-paginate: 10
+# paginate: 10 # 已停用：首页为全量分类导航，无需分页
 lsi: false
 quiet: false
 excerpt_separator: "\n\n"
@@ -76,7 +76,7 @@ plugins:
     - jekyll-github-metadata
     - rouge
 #     - jekyll-html-pipeline
-    - jekyll-paginate
+#     - jekyll-paginate
     - jekyll-sitemap
     - jekyll-feed
     - jemoji

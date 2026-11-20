@@ -7,8 +7,6 @@ keywords: internet, 断网
 ---
 
 
-![](/images/blog/offline.jpg)
-
 那么，今天发生了什么事？思考片刻我就找到了最大的原因——没网。
 
 |                | 有网         | 没网                 |

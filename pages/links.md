@@ -42,7 +42,7 @@ permalink: /links/
 .friend-name {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text);
 }
 .friend-url {
   font-size: 0.78rem;

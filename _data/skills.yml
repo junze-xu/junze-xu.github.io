@@ -31,3 +31,10 @@
 
 - name: Shell
   level: 65
+
+- name: AI Infra / GPU 运维
+  level: 65
+- name: LLM 应用开发
+  level: 60
+- name: AI 数据分析
+  level: 55
