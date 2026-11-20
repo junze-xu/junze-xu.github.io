@@ -36,20 +36,6 @@ permalink: /projects/
 {% endfor %}
 </div>
 
-<!-- 关注区 -->
-<div class="hub-follow">
-  <div class="hub-follow-item">
-    <img src="{{ '/images/qrcode-official-account.jpg' | relative_url }}" alt="公众号 JunzeXuInfra">
-    <p>公众号 <strong>JunzeXuInfra</strong></p>
-    <span>技术干货 · infra 品牌主阵地</span>
-  </div>
-  <div class="hub-follow-item">
-    <img src="{{ '/images/Wechat_JunzeXu.jpeg' | relative_url }}" alt="个人微信">
-    <p>个人微信 <strong>JunzeXu</strong></p>
-    <span>欢迎与我交流</span>
-  </div>
-</div>
-
 <style>
 .projects-hub {
   display: grid;
@@ -118,32 +104,4 @@ permalink: /projects/
   text-decoration: none;
 }
 .hub-links a:hover { text-decoration: underline; }
-
-.hub-follow {
-  margin-top: 3rem;
-  padding: 2rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  display: flex;
-  gap: 2.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.hub-follow-item { text-align: center; }
-.hub-follow-item img {
-  width: 168px;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-}
-.hub-follow-item p {
-  margin: 0.6rem 0 0.15rem;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-}
-.hub-follow-item span {
-  font-size: 0.75rem;
-  color: var(--text-tertiary);
-}
 </style>
