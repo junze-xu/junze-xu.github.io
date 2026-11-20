@@ -3,22 +3,46 @@ layout: default
 class: home
 ---
 
-<!-- Compact Hero -->
-<section class="hero" style="min-height: auto; padding: 4.5rem 2rem 3.5rem;">
-  <span class="hero-tag">TECH BLOG</span>
-  <h1>技术<span class="gradient-text">文章笔记</span></h1>
+<!-- Compact Site Header -->
+<section class="site-hero">
+  <h1 class="site-hero__name"><span class="gradient-text">{{ site.title }}</span></h1>
   <div class="hero-stats">
     <span><strong>{{ site.posts.size }}</strong> 篇文章</span>
     <span class="divider">·</span>
     <span><strong>{{ site.wiki.size }}</strong> 篇速查手册</span>
-    <span class="divider">·</span>
-    <span>Linux / C++ / OpenSSL / 效率工具</span>
   </div>
   <div class="hero-actions">
     <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
     <a href="{{ '/about/' | relative_url }}" class="cta-btn ghost">关于我 →</a>
   </div>
 </section>
+
+<style>
+/* Compact site header（替代旧版大标题 Hero） */
+.site-hero {
+  text-align: center;
+  padding: 2.75rem 2rem 2.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.site-hero__name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+.site-hero .hero-stats {
+  justify-content: center;
+  font-size: 0.88rem;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+.site-hero .hero-stats strong { font-size: 0.95rem; }
+.site-hero .cta-btn { padding: 0.7rem 1.6rem; font-size: 0.88rem; }
+@media (max-width: 768px) {
+  .site-hero { padding: 2rem 1.25rem 1.75rem; }
+  .site-hero__name { font-size: 1.2rem; }
+}
+</style>
 
 <!-- Blog Categories -->
 <section class="section" id="categories">
