@@ -641,14 +641,44 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Footer --- */
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 3rem 2rem;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.82rem;
+border-top: 1px solid var(--border);
+padding: 3rem 2rem;
+text-align: center;
+color: var(--text-muted);
+font-size: 0.82rem;
 }
 .site-footer a { color: var(--text-secondary); }
 .site-footer a:hover { color: var(--text); }
+
+/* --- Footer QR --- */
+.footer-qr {
+display: flex;
+justify-content: center;
+gap: 2.5rem;
+margin-top: 1.8rem;
+flex-wrap: wrap;
+}
+.footer-qr-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.78rem;
+color: var(--text-secondary);
+}
+.footer-qr-item img {
+width: 96px;
+height: 96px;
+object-fit: contain;
+background: #fff;
+border-radius: 8px;
+border: 1px solid var(--border);
+}
+.footer-qr-item strong { color: var(--text); }
+@media (max-width: 480px) {
+.footer-qr { gap: 1.2rem; }
+.footer-qr-item img { width: 84px; height: 84px; }
+}
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
