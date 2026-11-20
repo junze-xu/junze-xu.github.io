@@ -355,11 +355,19 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5rem;
 }
 .project-card {
+  position: relative;
+  cursor: pointer;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 0.3s, border-color 0.3s;
+}
+.stretched-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
 }
 .project-card:hover {
   transform: translateY(-4px);
@@ -667,17 +675,17 @@ font-size: 0.78rem;
 color: var(--text-secondary);
 }
 .footer-qr-item img {
-width: 96px;
-height: 96px;
-object-fit: contain;
-background: #fff;
-border-radius: 8px;
-border: 1px solid var(--border);
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 .footer-qr-item strong { color: var(--text); }
 @media (max-width: 480px) {
 .footer-qr { gap: 1.2rem; }
-.footer-qr-item img { width: 84px; height: 84px; }
+.footer-qr-item img { width: 100px; height: 100px; }
 }
 
 /* --- Responsive --- */

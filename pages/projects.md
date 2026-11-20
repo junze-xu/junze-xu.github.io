@@ -25,7 +25,7 @@ permalink: /projects/
       <div class="tech">{{ project.tech }}</div>
       <div class="hub-links">
         {% if project.link %}
-        <a href="{{ project.link }}" target="_blank" rel="noopener">访问站点 →</a>
+        <a href="{{ project.link }}" target="_blank" rel="noopener" class="stretched-link">访问站点 →</a>
         {% endif %}
         {% if project.repo %}
         <a href="{{ project.repo }}" target="_blank" rel="noopener">GitHub 仓库</a>
@@ -44,6 +44,8 @@ permalink: /projects/
   margin-top: 2rem;
 }
 .hub-card {
+  position: relative; /* 供内部链接 ::after 撑满整卡 */
+  cursor: pointer;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -104,4 +106,8 @@ permalink: /projects/
   text-decoration: none;
 }
 .hub-links a:hover { text-decoration: underline; }
+.hub-links a:last-child {
+  position: relative; /* 保持在整卡遮罩之上，仍可单独点 GitHub */
+  z-index: 4;
+}
 </style>

@@ -39,31 +39,31 @@ skills:
     level: 70
 
 # 项目列表（对应 4 个 GitHub Pages 项目，同步展示在 /projects/ 与 /about/）
-# tag 可选：补全/接通/落地/从0到1 等关键词
+# tag 展示项目类型（如：技术写作 / 认证备考 / 数据榜单 / 效率工具）
 projects:
   - title: "个人博客"
-    tag: "从 0 到 1"
+    tag: "技术写作"
     description: "技术文章、Wiki 速查手册与个人笔记，覆盖 Linux、C/C++、OpenSSL、Makefile 等方向。"
     tech: "Jekyll / GitHub Pages"
     emoji: "📝"
     link: "https://junze-xu.github.io/"
     repo: "https://github.com/junze-xu/junze-xu.github.io"
   - title: "NVIDIA AI Certification Notes"
-    tag: "落地"
+    tag: "认证备考"
     description: "NCA / NCP 认证逐域拆解，中文笔记 + 离线 PDF + 公开进度。"
     tech: "Docusaurus / GitHub Pages"
     emoji: "🎓"
     link: "https://junze-xu.github.io/NVIDIA-AI-Certification-Notes/"
     repo: "https://github.com/junze-xu/NVIDIA-AI-Certification-Notes"
   - title: "GitHub Trending 周榜 · 年榜"
-    tag: "接通"
+    tag: "数据榜单"
     description: "只看变化量的 GitHub 增量榜单：每日自动采集、多窗口差分，附 JSON API 与开发者榜。"
     tech: "TypeScript / GitHub Actions / GitHub Pages"
     emoji: "📊"
     link: "https://junze-xu.github.io/github-trending-rank/"
     repo: "https://github.com/junze-xu/github-trending-rank"
   - title: "Grok Bot 模板库"
-    tag: "补全"
+    tag: "效率工具"
     description: "151 个 Grok Bot 模板、16 个团队、技能与例行程序，粘贴即用的任务→边界→技能工具包。"
     tech: "Node.js / 静态站 / GitHub Pages"
     emoji: "🤖"

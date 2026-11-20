@@ -62,6 +62,7 @@ permalink: /about/
     <div class="projects-grid">
       {% for project in site.data.portfolio.projects limit:6 %}
       <div class="project-card">
+        <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
         <div class="project-cover">
           <span class="emoji">{{ project.emoji | default: '📁' }}</span>
         </div>
