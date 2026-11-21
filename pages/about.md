@@ -16,19 +16,6 @@ permalink: /about/
   <p>深入 AI 的开发、研究与分析 · AI Infra 工程实践<br>记录技术思考与开发实践</p>
 </section>
 
-<!-- Projects -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-header">
-      <h2>Projects</h2>
-      <p>精选代表项目，完整卡片统一放在项目页</p>
-    </div>
-    <div class="about-projects-cta">
-      <a class="cta-btn" href="{{ '/projects/' | relative_url }}">查看全部项目 →</a>
-    </div>
-  </div>
-</section>
-
 <!-- Skills -->
 <section class="section" id="skills">
   <div class="container">
@@ -99,8 +86,6 @@ permalink: /about/
   font-size: 1rem;
   line-height: 1.8;
 }
-/* 关于页项目区：只做入口 CTA，不与项目页重复 */
-.about-projects-cta { text-align: center; margin-top: 1.5rem; }
 /* 模块间距收紧 */
 .about-page .section { padding: 2.5rem 0; }
 .about-page .section-header { margin-bottom: 1.75rem; }
