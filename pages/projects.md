@@ -16,7 +16,7 @@ css: [projects.css]
     {% if project.link %}
     <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
     {% endif %}
-    <div class="hub-cover">
+    <div class="hub-cover" style="--pc: {{ project.color | default: '#2a2a3e' }};">
       <span class="emoji">{{ project.emoji }}</span>
     </div>
     <div class="hub-info">

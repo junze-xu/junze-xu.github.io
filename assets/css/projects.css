@@ -28,20 +28,18 @@
 }
 .hub-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-hover);
+  border-color: var(--pc, var(--border-hover));
 }
 
-/* --- 封面（按顺序微调色调，避免千篇一律） --- */
+/* --- 封面（每个项目一个独立色，来自 portfolio.yml 的 color 字段） --- */
 .hub-cover {
   height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  /* 由项目色渐变到深色底，颜色只作低饱和点缀，不铺满整卡 */
+  background: linear-gradient(135deg, var(--pc, #2a2a3e) 0%, #0d0f16 135%);
 }
-.hub-card:nth-child(2) .hub-cover { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); }
-.hub-card:nth-child(3) .hub-cover { background: linear-gradient(135deg, #022c22 0%, #065f46 100%); }
-.hub-card:nth-child(4) .hub-cover { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
 .hub-cover .emoji {
   font-size: 2.2rem;
   transition: transform 0.3s;

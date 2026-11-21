@@ -4,19 +4,23 @@
 - key: dev
   name: 开发工具
   icon: 🛠️
+  color: "#3b82f6"
   desc: 编辑器、IDE、版本控制等开发利器
 
 - key: system
   name: 系统平台
   icon: 💻
+  color: "#22c55e"
   desc: Linux / macOS / Windows 使用笔记
 
 - key: software
   name: 效率软件
   icon: 📦
+  color: "#f59e0b"
   desc: 提升工作与写作效率的软件
 
 - key: life
   name: 生活兴趣
   icon: 🏸
+  color: "#ec4899"
   desc: 工作之外的运动与爱好

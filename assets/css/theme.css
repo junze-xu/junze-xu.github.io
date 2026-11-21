@@ -769,15 +769,32 @@ color: var(--text-secondary);
   gap: 1.5rem;
 }
 .wiki-group-card {
+  --wc: #3b82f6;
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
   transition: transform 0.3s, border-color 0.3s;
 }
+/* 顶部分组色细线：颜色取自主数据，渐隐到卡片底色，只做点缀 */
+.wiki-group-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: linear-gradient(90deg, var(--wc) 0%, rgba(255, 255, 255, 0.03) 70%);
+}
 .wiki-group-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-hover);
+  border-color: var(--wc);
+}
+/* 分组计数跟随组色（归档页计数保持 muted，不受影响） */
+.wiki-group-card .cat-count {
+  color: var(--wc);
 }
 .wiki-group-card h3 {
   font-size: 1.15rem;

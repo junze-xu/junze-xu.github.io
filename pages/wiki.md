@@ -17,7 +17,7 @@ permalink: /wiki/
   <div class="container" style="max-width: 820px;">
     {% for g in site.data.wiki-groups %}
     {% assign group_items = site.wiki | where: "group", g.key %}
-    <div class="wiki-group-card" id="{{ g.key }}" style="margin-bottom: 1.5rem;">
+    <div class="wiki-group-card" id="{{ g.key }}" style="--wc: {{ g.color | default: '#3b82f6' }}; margin-bottom: 1.5rem;">
       <h3>{{ g.icon }} {{ g.name }} <span class="cat-count">{{ group_items.size }}</span></h3>
       <p class="group-desc">{{ g.desc }}</p>
       <div class="wiki-group-items">
