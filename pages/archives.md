@@ -22,7 +22,6 @@ permalink: /archives/
       </div>
       <div class="archive-actions">
         <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
-        <a href="{{ '/wiki/' | relative_url }}" class="cta-btn ghost">笔记速查 Wiki →</a>
       </div>
     </header>
 
