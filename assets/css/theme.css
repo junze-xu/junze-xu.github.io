@@ -823,3 +823,58 @@ color: var(--text-secondary);
     grid-template-columns: 1fr;
   }
 }
+
+/* --- 时间线（首页 + 归档页共用） --- */
+.page-timeline .container {
+  max-width: 820px;
+}
+.tl-year {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  margin: 2.5rem 0 0.5rem;
+}
+.tl-year:first-child {
+  margin-top: 0;
+}
+.tl-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tl-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.tl-list li:last-child {
+  border-bottom: none;
+}
+.tl-list a {
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tl-list a:hover {
+  color: var(--accent);
+}
+.tl-list .tl-date {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .tl-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .tl-list .tl-date {
+    margin-left: 0;
+  }
+}
