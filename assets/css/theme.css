@@ -771,6 +771,8 @@ color: var(--text-secondary);
 .wiki-group-card {
   --wc: #3b82f6;
   position: relative;
+  /* 圆角裁剪：顶部渐隐细线的方角两端不会超出卡片圆角轮廓 */
+  overflow: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
