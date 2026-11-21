@@ -348,80 +348,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 1s ease;
 }
 
-/* --- Projects Grid --- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-.project-card {
-  position: relative;
-  cursor: pointer;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
-}
+/* --- Stretched link（整卡可点） --- */
 .stretched-link::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 3;
-}
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-hover);
-}
-.project-cover {
-  height: 140px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.project-cover::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent);
-}
-.project-cover .emoji {
-  font-size: 2.8rem;
-  position: relative;
-  z-index: 1;
-}
-.project-info { padding: 1.5rem; }
-.project-tag {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  background: rgba(244, 63, 94, 0.1);
-  color: var(--accent);
-  border-radius: 4px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-.project-info h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.project-info .desc {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.project-tech {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
 }
 
 /* --- Blog Post List (Cards) --- */
@@ -696,7 +628,6 @@ color: var(--text-secondary);
   .site-nav { gap: 0.5rem; flex-wrap: nowrap; white-space: nowrap; }
   .site-nav a { font-size: 0.78rem; padding: 0.3rem 0; }
   .posts-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
   .abilities-grid { grid-template-columns: 1fr; }
   .article { padding: 2rem 1.25rem; }
   .article-header { text-align: left; }

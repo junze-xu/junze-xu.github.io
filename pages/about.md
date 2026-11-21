@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 关于
-description: Junze Xu ——系统程序员，专注于 Linux、C/C++、OpenSSL
-keywords: Junze Xu, 作品集, 系统程序员, Linux, C++
+description: Junze Xu ——深入 AI 的开发、研究与分析，聚焦 AI Infra 与 LLM 应用
+keywords: Junze Xu, 作品集, AI Infra, LLM, 技术博客
 comments: false
 menu: 关于
 permalink: /about/
@@ -16,29 +16,23 @@ permalink: /about/
   <p>深入 AI 的开发、研究与分析 · AI Infra 工程实践<br>记录技术思考与开发实践</p>
 </section>
 
-<!-- Projects -->
+<!-- Projects（紧凑入口，完整卡片见项目页） -->
 <section class="section" id="projects">
   <div class="container">
     <div class="section-header">
       <h2>Projects</h2>
-      <p>近期项目展示</p>
+      <p>精选代表项目 · <a href="{{ '/projects/' | relative_url }}">查看全部 →</a></p>
     </div>
-    <div class="projects-grid">
+    <div class="about-projects">
       {% for project in site.data.portfolio.projects %}
-      <div class="project-card">
-        <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
-        <div class="project-cover">
-          <span class="emoji">{{ project.emoji | default: '📁' }}</span>
-        </div>
-        <div class="project-info">
-          <span class="project-tag">{{ project.tag }}</span>
-          <h3>{{ project.title }}</h3>
-          <p class="desc">{{ project.description }}</p>
-          {% if project.tech %}
-          <div class="project-tech">{{ project.tech }}</div>
-          {% endif %}
-        </div>
-      </div>
+      <a class="about-project" href="{{ project.link }}" target="_blank" rel="noopener">
+        <span class="emoji">{{ project.emoji | default: '📁' }}</span>
+        <span class="meta">
+          <span class="name">{{ project.title }}</span>
+          <span class="tag">{{ project.tag }}</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
       {% endfor %}
     </div>
   </div>
@@ -113,6 +107,51 @@ permalink: /about/
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.8;
+}
+/* 关于页项目速览：一行四个紧凑入口，与项目页卡片差异化 */
+.about-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.about-project {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.15rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.about-project:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+.about-project .emoji { font-size: 1.7rem; flex-shrink: 0; }
+.about-project .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+.about-project .name { font-weight: 700; font-size: 0.95rem; }
+.about-project .tag {
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.about-project .arrow {
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+.about-project:hover .arrow { color: var(--text); transform: translateX(3px); }
+@media (max-width: 680px) {
+  .about-projects { grid-template-columns: 1fr; }
 }
 /* 模块间距收紧 */
 .about-page .section { padding: 2.5rem 0; }
