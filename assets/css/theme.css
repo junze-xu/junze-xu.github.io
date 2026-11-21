@@ -831,6 +831,53 @@ color: var(--text-secondary);
   transform: translateY(-2px);
 }
 
+/* --- 友邻卡片（对齐维基分组卡：圆角裁剪 + 顶部渐隐色线 + 悬停描边） --- */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.friend-card {
+  --lc: #14b8a6;
+  position: relative;
+  /* 圆角裁剪：顶部细线两端不超出卡片轮廓（同 .wiki-group-card） */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.friend-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lc) 0%, rgba(255, 255, 255, 0.03) 70%);
+}
+.friend-card:hover {
+  border-color: var(--lc);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.friend-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.friend-url {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* Home responsive tweaks */
 @media (max-width: 768px) {
   .category-list li {
