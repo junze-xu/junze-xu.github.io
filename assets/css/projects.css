@@ -42,16 +42,13 @@
 }
 
 /* --- 卡片网格 ---
-   桌面端固定 2 列（2×2 最稳），奇数个时最后一张独占整行；
-   小屏自动降为 1 列，数量变化无需改样式。 */
+   宽屏一排放 4 个，中屏 3 个，窄屏 2 个 / 1 个，
+   全部由 auto-fill 自动排布，数量变化无需改样式。 */
 .projects-hub {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
   margin-top: 2.5rem;
-}
-.hub-card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
 }
 
 /* --- 卡片 --- */
@@ -73,7 +70,7 @@
 
 /* --- 封面（按顺序微调色调，避免千篇一律） --- */
 .hub-cover {
-  height: 130px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +80,7 @@
 .hub-card:nth-child(3) .hub-cover { background: linear-gradient(135deg, #022c22 0%, #065f46 100%); }
 .hub-card:nth-child(4) .hub-cover { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
 .hub-cover .emoji {
-  font-size: 3rem;
+  font-size: 2.2rem;
   transition: transform 0.3s;
 }
 .hub-card:hover .hub-cover .emoji {
@@ -92,7 +89,7 @@
 
 /* --- 信息区 --- */
 .hub-info {
-  padding: 1.4rem 1.5rem 1.5rem;
+  padding: 1rem 1.1rem 1.1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -100,50 +97,51 @@
 .hub-tag {
   display: inline-block;
   align-self: flex-start;
-  padding: 0.2rem 0.6rem;
+  padding: 0.15rem 0.5rem;
   background: rgba(244, 63, 94, 0.1);
   color: var(--accent);
   border-radius: 4px;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 .hub-info h3 {
-  font-size: 1.12rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .hub-info .desc {
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.65;
-  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
 }
 .hub-info .tech {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   border-top: 1px solid var(--border);
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
 }
 
 /* --- 操作按钮（保持在整卡遮罩之上，可单独点击） --- */
 .hub-links {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
   margin-top: auto;
 }
 .hub-links a {
   position: relative;
   z-index: 4;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 0.45rem 0.95rem;
+  padding: 0.35rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
