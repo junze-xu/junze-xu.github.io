@@ -780,13 +780,13 @@ color: var(--text-secondary);
   border-color: var(--border-hover);
 }
 .wiki-group-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
 .group-desc {
-  color: var(--text-muted);
-  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
   margin-bottom: 1.25rem;
 }
 .wiki-group-items {
@@ -794,20 +794,22 @@ color: var(--text-secondary);
   flex-wrap: wrap;
   gap: 0.6rem;
 }
+/* 标签：与归档页分类导航同款（深色胶囊 + 白字 + accent 悬停） */
 .chip {
   display: inline-block;
-  padding: 0.45rem 1rem;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 0.5rem 1.1rem;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+  border-radius: 50px;
+  color: var(--text);
+  font-size: 0.88rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: border-color 0.2s, transform 0.2s, color 0.2s;
 }
 .chip:hover {
-  color: var(--text);
   border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-2px);
 }
 
 /* Home responsive tweaks */
