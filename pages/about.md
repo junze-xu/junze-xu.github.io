@@ -16,24 +16,15 @@ permalink: /about/
   <p>深入 AI 的开发、研究与分析 · AI Infra 工程实践<br>记录技术思考与开发实践</p>
 </section>
 
-<!-- Projects（紧凑入口，完整卡片见项目页） -->
+<!-- Projects（只在项目页展示，避免重复） -->
 <section class="section" id="projects">
   <div class="container">
     <div class="section-header">
       <h2>Projects</h2>
-      <p>精选代表项目 · <a href="{{ '/projects/' | relative_url }}">查看全部 →</a></p>
+      <p>精选代表项目，完整卡片统一放在项目页</p>
     </div>
-    <div class="about-projects">
-      {% for project in site.data.portfolio.projects %}
-      <a class="about-project" href="{{ project.link }}" target="_blank" rel="noopener">
-        <span class="emoji">{{ project.emoji | default: '📁' }}</span>
-        <span class="meta">
-          <span class="name">{{ project.title }}</span>
-          <span class="tag">{{ project.tag }}</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
-      {% endfor %}
+    <div class="about-projects-cta">
+      <a class="cta-btn" href="{{ '/projects/' | relative_url }}">查看全部项目 →</a>
     </div>
   </div>
 </section>
@@ -108,51 +99,8 @@ permalink: /about/
   font-size: 1rem;
   line-height: 1.8;
 }
-/* 关于页项目速览：一行四个紧凑入口，与项目页卡片差异化 */
-.about-projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-.about-project {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 1rem 1.15rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: var(--text);
-  transition: border-color 0.2s, transform 0.2s;
-}
-.about-project:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
-}
-.about-project .emoji { font-size: 1.7rem; flex-shrink: 0; }
-.about-project .meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
-}
-.about-project .name { font-weight: 700; font-size: 0.95rem; }
-.about-project .tag {
-  font-size: 0.68rem;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-.about-project .arrow {
-  margin-left: auto;
-  color: var(--text-muted);
-  transition: color 0.2s, transform 0.2s;
-}
-.about-project:hover .arrow { color: var(--text); transform: translateX(3px); }
-@media (max-width: 680px) {
-  .about-projects { grid-template-columns: 1fr; }
-}
+/* 关于页项目区：只做入口 CTA，不与项目页重复 */
+.about-projects-cta { text-align: center; margin-top: 1.5rem; }
 /* 模块间距收紧 */
 .about-page .section { padding: 2.5rem 0; }
 .about-page .section-header { margin-bottom: 1.75rem; }

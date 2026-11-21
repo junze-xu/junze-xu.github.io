@@ -15,6 +15,7 @@ permalink: /projects/
 <div class="projects-hub">
 {% for project in site.data.portfolio.projects %}
   <div class="hub-card">
+    <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
     <div class="hub-cover">
       <span class="emoji">{{ project.emoji }}</span>
     </div>
@@ -25,7 +26,7 @@ permalink: /projects/
       <div class="tech">{{ project.tech }}</div>
       <div class="hub-links">
         {% if project.link %}
-        <a href="{{ project.link }}" target="_blank" rel="noopener" class="stretched-link">访问站点 →</a>
+        <a href="{{ project.link }}" target="_blank" rel="noopener" class="hub-primary">访问站点 →</a>
         {% endif %}
         {% if project.repo %}
         <a href="{{ project.repo }}" target="_blank" rel="noopener">GitHub 仓库</a>
@@ -101,13 +102,22 @@ permalink: /projects/
   flex-wrap: wrap;
 }
 .hub-links a {
-  font-size: 0.8rem;
-  color: var(--accent);
-  text-decoration: none;
-}
-.hub-links a:hover { text-decoration: underline; }
-.hub-links a:last-child {
-  position: relative; /* 保持在整卡遮罩之上，仍可单独点 GitHub */
+  position: relative; /* 保持在整卡遮罩之上，仍可单独点击 */
   z-index: 4;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
+.hub-links a:hover { border-color: var(--accent); color: var(--text); }
+.hub-links a.hub-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.hub-links a.hub-primary:hover { color: #fff; opacity: 0.9; }
 </style>
