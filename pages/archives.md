@@ -32,7 +32,7 @@ permalink: /archives/
     {% assign sorted_categories = site.categories | sort %}
     <div class="cat-nav-grid">
       {% for category in sorted_categories %}
-      <a href="#cat-{{ category[0] }}" class="cat-nav-card">{{ category[0] }}<span class="count">{{ category[1].size }}</span></a>
+      <a href="#cat-{{ category[0] }}" class="cat-nav-card"><span class="dot"></span>{{ category[0] }}<span class="count">{{ category[1].size }}</span></a>
       {% endfor %}
     </div>
     <div class="cat-listing">

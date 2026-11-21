@@ -691,8 +691,9 @@ color: var(--text-secondary);
   margin-bottom: 3.5rem;
 }
 .cat-nav-card {
+  --cc: #8b949e; /* 主题专属色，由下方 14 色循环自动分配 */
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
   padding: 0.55rem 1.2rem;
   background: var(--bg-card);
@@ -704,7 +705,7 @@ color: var(--text-secondary);
   transition: border-color 0.2s, transform 0.2s;
 }
 .cat-nav-card:hover {
-  border-color: var(--accent);
+  border-color: var(--cc);
   transform: translateY(-2px);
   color: var(--text);
 }
@@ -714,6 +715,32 @@ color: var(--text-secondary);
   font-size: 0.72rem;
   color: var(--text-muted);
 }
+/* 主题色落在：色点 / 计数 / 悬停描边（低饱和，不张扬） */
+.cat-nav-card .dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--cc);
+}
+.cat-nav-card .count {
+  color: var(--cc);
+}
+/* 14 色一循环：新增主题自动顺位取色，无需改样式 */
+.cat-nav-card:nth-child(14n+1)  { --cc: #4f8ef7; }
+.cat-nav-card:nth-child(14n+2)  { --cc: #22c55e; }
+.cat-nav-card:nth-child(14n+3)  { --cc: #f59e0b; }
+.cat-nav-card:nth-child(14n+4)  { --cc: #8b5cf6; }
+.cat-nav-card:nth-child(14n+5)  { --cc: #f87171; }
+.cat-nav-card:nth-child(14n+6)  { --cc: #22d3ee; }
+.cat-nav-card:nth-child(14n+7)  { --cc: #a3e635; }
+.cat-nav-card:nth-child(14n+8)  { --cc: #fb923c; }
+.cat-nav-card:nth-child(14n+9)  { --cc: #e879f9; }
+.cat-nav-card:nth-child(14n+10) { --cc: #2dd4bf; }
+.cat-nav-card:nth-child(14n+11) { --cc: #818cf8; }
+.cat-nav-card:nth-child(14n+12) { --cc: #facc15; }
+.cat-nav-card:nth-child(14n+13) { --cc: #34d399; }
+.cat-nav-card:nth-child(14n+14) { --cc: #f472b6; }
 
 /* Category full listing */
 .category-block {
