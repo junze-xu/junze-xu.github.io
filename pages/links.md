@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: 友邻
 description: 有趣的博客与站点收藏
 keywords: 友情链接, 友邻, 博客
@@ -8,21 +8,29 @@ menu: 友邻
 permalink: /links/
 ---
 
-<div class="friends-grid">
-{% for link in site.data.links %}
-  <a href="{{ link.url }}" target="_blank" rel="noopener" class="friend-card">
-    <span class="friend-name">{{ link.name }}</span>
-    <span class="friend-url">{{ link.url | remove: 'http://' | remove: 'https://' }}</span>
-  </a>
-{% endfor %}
-</div>
+<header class="page-hero">
+  <h1>友邻</h1>
+  <p class="page-hero__sub">有趣的博客与站点收藏</p>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="friends-grid">
+    {% for link in site.data.links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" class="friend-card">
+        <span class="friend-name">{{ link.name }}</span>
+        <span class="friend-url">{{ link.url | remove: 'http://' | remove: 'https://' }}</span>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>
 
 <style>
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
 }
 .friend-card {
   display: flex;

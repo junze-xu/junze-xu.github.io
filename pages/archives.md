@@ -7,26 +7,28 @@ comments: false
 permalink: /archives/
 ---
 
+<header class="page-hero">
+  <p class="page-hero__kicker"><span class="gradient-text">深入 AI 的开发、研究与分析</span></p>
+  <h1>归档</h1>
+  <p class="page-hero__sub">按主题与时间线浏览全部文章</p>
+  <div class="page-hero__meta">
+    <span><strong>{{ site.posts.size }}</strong> 篇文章</span>
+    <span class="divider">·</span>
+    <span><strong>{{ site.wiki.size }}</strong> 篇速查手册</span>
+  </div>
+  <div class="page-hero__actions">
+    <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
+  </div>
+</header>
+
 <section class="section">
   <div class="container" style="max-width: 820px;">
 
-    <!-- 头部：定位语 + 规模统计 + 搜索入口 -->
-    <header class="archive-header">
-      <p class="archive-kicker"><span class="gradient-text">深入 AI 的开发、研究与分析</span></p>
-      <h1>归档</h1>
-      <p class="archive-sub">按主题与时间线浏览全部文章</p>
-      <div class="archive-stats">
-        <span><strong>{{ site.posts.size }}</strong> 篇文章</span>
-        <span class="divider">·</span>
-        <span><strong>{{ site.wiki.size }}</strong> 篇速查手册</span>
-      </div>
-      <div class="archive-actions">
-        <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
-      </div>
-    </header>
-
     <!-- 文章分类 -->
-    <h2 class="archive-section-title">文章分类</h2>
+    <div class="section-header">
+      <h2>分类</h2>
+      <p>按主题浏览全部文章</p>
+    </div>
     {% assign sorted_categories = site.categories | sort %}
     <div class="cat-nav-grid">
       {% for category in sorted_categories %}
@@ -50,7 +52,10 @@ permalink: /archives/
     </div>
 
     <!-- 时间线 -->
-    <h2 class="archive-section-title">时间线</h2>
+    <div class="section-header">
+      <h2>时间线</h2>
+      <p>按年份浏览全部文章</p>
+    </div>
     {% assign thisyear = 0 %}
     {% for post in site.posts %}
       {% assign year = post.date | date: '%Y' %}
@@ -68,60 +73,3 @@ permalink: /archives/
     {% if thisyear != 0 %}</ul>{% endif %}
   </div>
 </section>
-
-<style>
-.archive-header {
-  text-align: center;
-  padding: 1rem 0 3rem;
-}
-.archive-kicker {
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.75rem;
-}
-.archive-header h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-.archive-sub {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-.archive-stats {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1.1rem 0 1.4rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-.archive-stats strong {
-  color: var(--accent);
-  font-size: 1rem;
-}
-.archive-stats .divider {
-  color: var(--border);
-}
-.archive-actions {
-  display: flex;
-  gap: 0.9rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.archive-section-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 3rem 0 1.5rem;
-  padding-left: 0.7rem;
-  border-left: 3px solid var(--accent);
-}
-@media (max-width: 768px) {
-  .archive-header {
-    padding-bottom: 2rem;
-  }
-  .archive-header h1 {
-    font-size: 1.6rem;
-  }
-}
-</style>

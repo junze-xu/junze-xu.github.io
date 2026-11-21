@@ -6,12 +6,13 @@ comments: false
 permalink: /search/
 ---
 
+<header class="page-hero">
+  <h1>搜索</h1>
+  <p class="page-hero__sub">在全站文章中检索</p>
+</header>
+
 <section class="section">
   <div class="container" style="max-width: 680px;">
-    <header class="section-header" style="text-align: left; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; font-weight: 800;">搜索</h1>
-      <p style="color: var(--text-secondary); margin-top: 0.75rem;">在全站文章中检索</p>
-    </header>
 
     <div style="position: relative; margin-bottom: 2rem;">
       <input
@@ -43,5 +44,5 @@ permalink: /search/
   </div>
 </section>
 
-<script>window.searchJsonUrl = '{{ "/search.json" | relative_url }}";</script>
+<script>window.searchJsonUrl = '{{ "/search.json" | relative_url }}';</script>
 <script src="{{ 'assets/js/search.js' | relative_url }}" defer></script>

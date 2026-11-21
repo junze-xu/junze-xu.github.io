@@ -8,13 +8,13 @@ menu: 维基
 permalink: /wiki/
 ---
 
+<header class="page-hero">
+  <h1>Wiki</h1>
+  <p class="page-hero__sub">笔记 &amp; 速查 · 共 {{ site.wiki.size }} 篇</p>
+</header>
+
 <section class="section">
   <div class="container" style="max-width: 820px;">
-    <header class="section-header" style="text-align: left; margin-bottom: 3rem;">
-      <h1 style="font-size: 2rem; font-weight: 800;">Wiki</h1>
-      <p style="color: var(--text-secondary); margin-top: 0.75rem;">笔记 &amp; 速查 · 共 {{ site.wiki.size }} 篇</p>
-    </header>
-
     {% for g in site.data.wiki-groups %}
     {% assign group_items = site.wiki | where: "group", g.key %}
     <div class="wiki-group-card" id="{{ g.key }}" style="margin-bottom: 1.5rem;">
