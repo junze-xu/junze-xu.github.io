@@ -28,7 +28,7 @@ skills:
   - name: AI 应用
     level: 70
 
-# 项目列表（对应 4 个 GitHub Pages 项目，同步展示在 /projects/ 与 /about/）
+# 项目列表（数据驱动：/projects/ 页面与校验脚本均按本文件自动渲染，增删条目无需改 HTML）
 # tag 展示项目类型（如：技术写作 / 认证备考 / 数据榜单 / 效率工具）
 projects:
   - title: "个人博客"

@@ -1,0 +1,173 @@
+/* ============================================
+   Projects 页面（项目展示子模块）
+   由 pages/projects.md 通过 front matter `css: [projects.css]` 引入，
+   只在该页加载，不污染其他页面样式。
+   ============================================ */
+
+/* --- Hero 头部 --- */
+.projects-hero {
+  text-align: center;
+  padding: 5rem 0 2rem;
+}
+.projects-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.projects-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+.projects-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.projects-meta strong {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.projects-meta .divider {
+  color: var(--border);
+}
+
+.projects-section {
+  padding-top: 0;
+}
+
+/* --- 卡片网格 ---
+   桌面端固定 2 列（2×2 最稳），奇数个时最后一张独占整行；
+   小屏自动降为 1 列，数量变化无需改样式。 */
+.projects-hub {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.hub-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* --- 卡片 --- */
+.hub-card {
+  position: relative; /* 供内部 ::after 撑满整卡 */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.hub-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+}
+
+/* --- 封面（按顺序微调色调，避免千篇一律） --- */
+.hub-cover {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+.hub-card:nth-child(2) .hub-cover { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); }
+.hub-card:nth-child(3) .hub-cover { background: linear-gradient(135deg, #022c22 0%, #065f46 100%); }
+.hub-card:nth-child(4) .hub-cover { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+.hub-cover .emoji {
+  font-size: 3rem;
+  transition: transform 0.3s;
+}
+.hub-card:hover .hub-cover .emoji {
+  transform: scale(1.12);
+}
+
+/* --- 信息区 --- */
+.hub-info {
+  padding: 1.4rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.hub-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent);
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.hub-info h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.hub-info .desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.hub-info .tech {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  margin-bottom: 0.9rem;
+}
+
+/* --- 操作按钮（保持在整卡遮罩之上，可单独点击） --- */
+.hub-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.hub-links a {
+  position: relative;
+  z-index: 4;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.hub-links a:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.hub-links a.hub-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.hub-links a.hub-primary:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+@media (max-width: 760px) {
+  .projects-hero {
+    padding: 3.5rem 0 1rem;
+  }
+  .projects-hub {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+}

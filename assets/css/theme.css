@@ -348,7 +348,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 1s ease;
 }
 
-/* --- Stretched link（整卡可点） --- */
 .stretched-link::after {
   content: '';
   position: absolute;

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<section class="projects-hero">
+  <div class="container">
+    <span class="hero-tag">PORTFOLIO · 公开项目</span>
+    <h1>{{ page.title }}</h1>
+    <p class="projects-subtitle">{{ page.subtitle | default: page.description }}</p>
+    <div class="projects-meta">
+      <strong>{{ site.data.portfolio.projects.size }}</strong>
+      <span>个公开项目</span>
+      <span class="divider">·</span>
+      <span>全部托管于 GitHub Pages</span>
+    </div>
+  </div>
+</section>
+
+<section class="section projects-section">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>

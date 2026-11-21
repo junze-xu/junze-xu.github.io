@@ -1,21 +1,21 @@
 ---
-layout: page
+layout: projects
 title: 项目
+subtitle: 以下项目均已部署到 GitHub Pages 并持续更新，涵盖个人博客、AI 认证备考、数据榜单与效率工具。
 description: Junze Xu 的公开项目合集——个人博客、NVIDIA 认证笔记、GitHub Trending 周榜、Grok Bot 模板库
 keywords: Junze Xu, 项目合集, GitHub Pages, NVIDIA 认证, GitHub Trending, Grok Bot
 comments: false
 menu: 项目
 permalink: /projects/
+css: [projects.css]
 ---
-
-<p style="margin-top: 1rem; line-height: 1.9;">
-  这里是我在 GitHub 上挑选的公开项目，均已部署到 GitHub Pages，后续会持续补充。
-</p>
 
 <div class="projects-hub">
 {% for project in site.data.portfolio.projects %}
   <div class="hub-card">
+    {% if project.link %}
     <a class="stretched-link" href="{{ project.link }}" target="_blank" rel="noopener" aria-label="访问 {{ project.title }}"></a>
+    {% endif %}
     <div class="hub-cover">
       <span class="emoji">{{ project.emoji }}</span>
     </div>
@@ -36,88 +36,3 @@ permalink: /projects/
   </div>
 {% endfor %}
 </div>
-
-<style>
-.projects-hub {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.hub-card {
-  position: relative; /* 供内部链接 ::after 撑满整卡 */
-  cursor: pointer;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
-}
-.hub-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-hover);
-}
-.hub-cover {
-  height: 130px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hub-cover .emoji { font-size: 2.8rem; }
-.hub-info { padding: 1.4rem; }
-.hub-tag {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  background: rgba(244, 63, 94, 0.1);
-  color: var(--accent);
-  border-radius: 4px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.6rem;
-}
-.hub-info h3 {
-  font-size: 1.08rem;
-  font-weight: 700;
-  margin-bottom: 0.45rem;
-}
-.hub-info .desc {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin-bottom: 0.9rem;
-}
-.hub-info .tech {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  padding-top: 0.7rem;
-  border-top: 1px solid var(--border);
-  margin-bottom: 0.9rem;
-}
-.hub-links {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-.hub-links a {
-  position: relative; /* 保持在整卡遮罩之上，仍可单独点击 */
-  z-index: 4;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent-2);
-  text-decoration: none;
-  padding: 0.45rem 0.95rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
-}
-.hub-links a:hover { border-color: var(--accent); color: var(--text); }
-.hub-links a.hub-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-.hub-links a.hub-primary:hover { color: #fff; opacity: 0.9; }
-</style>

@@ -16,7 +16,7 @@ permalink: /about/
   <p>深入 AI 的开发、研究与分析 · AI Infra 工程实践<br>记录技术思考与开发实践</p>
 </section>
 
-<!-- Projects（只在项目页展示，避免重复） -->
+<!-- Projects -->
 <section class="section" id="projects">
   <div class="container">
     <div class="section-header">
